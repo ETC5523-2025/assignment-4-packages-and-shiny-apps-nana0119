@@ -38,8 +38,16 @@ package:
 # install.packages("remotes")
 
 remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119")
-#> Skipping install of 'assignment4' from a github remote, the SHA1 (3d21392d) has not changed since last install.
-#>   Use `force = TRUE` to force installation
+#> Downloading GitHub repo ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119@HEAD
+#> ── R CMD build ─────────────────────────────────────────────────────────────────
+#>      checking for file ‘/private/var/folders/t4/8f2397n15vl_xd57bnz00cmw0000gn/T/RtmpDMxAKb/remotesf5e712dc180b/ETC5523-2025-assignment-4-packages-and-shiny-apps-nana0119-0f90f15/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/t4/8f2397n15vl_xd57bnz00cmw0000gn/T/RtmpDMxAKb/remotesf5e712dc180b/ETC5523-2025-assignment-4-packages-and-shiny-apps-nana0119-0f90f15/DESCRIPTION’
+#>   ─  preparing ‘yarrawater’:
+#>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+#>   ─  checking for LF line-endings in source and make files and shell scripts
+#>   ─  checking for empty or unneeded directories
+#>   ─  building ‘yarrawater_0.0.0.9000.tar.gz’
+#>      
+#> 
 library(yarrawater)
 ```
 
@@ -60,3 +68,4 @@ plot_yarra_data() — creates plots comparing the 1990s and 2020s.
   using roxygen2.
 
 - pkgdown website:
+  <https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-nana0119/>

@@ -1,11 +1,12 @@
 ---
-title: "introduction"
+title: "Introduction to the yarrawater package"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction}
+  %\VignetteIndexEntry{Introduction to yarrawater}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -15,5 +16,5 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(assignment4)
+library(yarrawater)
 ```
