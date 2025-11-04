@@ -1,52 +1,62 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# assignment4
+# yarrawater
 
-<!-- badges: start -->
-<!-- badges: end -->
+### Purpose of the package
 
-The goal of assignment4 is to …
+The **yarrawater** package helps users explore changes in **Yarra River
+water quality** between the **1990s** and **2020s**.  
+It provides a cleaned dataset, useful plotting functions, and an
+interactive **Shiny app** for comparing water quality indicators such as
+**pH**, **Salinity as <EC@25>**, **Turbidity**, and **Water
+Temperature**.
 
-## Installation
+------------------------------------------------------------------------
 
-You can install the development version of assignment4 from
-[GitHub](https://github.com/) with:
-
-``` r
-# install.packages("pak")
-pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119")
-```
-
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+### Example of use
 
 ``` r
-library(assignment4)
-## basic example code
+library(yarrawater)
+
+# Launch the interactive Shiny app
+run_my_app()
+
+# Create a static summary plot
+plot_yarra_data()
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+These tools help users visualise how different water parameters have
+changed over time.
+
+### Installation
+
+You can install the package directly from GitHub using the remotes
+package:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+# install.packages("remotes")
+
+remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119")
+#> Skipping install of 'assignment4' from a github remote, the SHA1 (3d21392d) has not changed since last install.
+#>   Use `force = TRUE` to force installation
+library(yarrawater)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+### Overview of the package
 
-You can also embed plots, for example:
+- Data: yarra_wq_clean — cleaned Yarra River water quality dataset.
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+- Functions:
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+run_app() — launches the interactive Shiny dashboard.
+
+plot_yarra_data() — creates plots comparing the 1990s and 2020s.
+
+- Shiny: Located in inst/shiny-app/, allowing users to select parameters
+  and plot types interactively.
+
+- Documentation: All functions and data objects are clearly documented
+  using roxygen2.
+
+- pkgdown website:

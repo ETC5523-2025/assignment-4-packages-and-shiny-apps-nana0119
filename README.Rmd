@@ -13,43 +13,55 @@ knitr::opts_chunk$set(
 )
 ```
 
-# assignment4
+# yarrawater
 
-<!-- badges: start -->
-<!-- badges: end -->
+### Purpose of the package
+The **yarrawater** package helps users explore changes in **Yarra River water quality** between the **1990s** and **2020s**.  
+It provides a cleaned dataset, useful plotting functions, and an interactive **Shiny app** for comparing water quality indicators such as **pH**, **Salinity as EC@25**, **Turbidity**, and **Water Temperature**.
 
-The goal of assignment4 is to ...
+---
 
-## Installation
+### Example of use
 
-You can install the development version of assignment4 from [GitHub](https://github.com/) with:
+```{r example, eval=FALSE}
+library(yarrawater)
 
-``` r
-# install.packages("pak")
-pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119")
+# Launch the interactive Shiny app
+run_my_app()
+
+# Create a static summary plot
+plot_yarra_data()
+```
+These tools help users visualise how different water parameters have changed over time.
+
+### Installation
+
+You can install the package directly from GitHub using the remotes package:
+
+```{r}
+# install.packages("remotes")
+
+remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119")
+library(yarrawater)
+
 ```
 
-## Example
+### Overview of the package
 
-This is a basic example which shows you how to solve a common problem:
+- Data:
+yarra_wq_clean — cleaned Yarra River water quality dataset.
 
-```{r example}
-library(assignment4)
-## basic example code
-```
+- Functions:
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+run_app() — launches the interactive Shiny dashboard.
 
-```{r cars}
-summary(cars)
-```
+plot_yarra_data() — creates plots comparing the 1990s and 2020s.
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+- Shiny:
+Located in inst/shiny-app/, allowing users to select parameters and plot types interactively.
 
-You can also embed plots, for example:
+- Documentation:
+All functions and data objects are clearly documented using roxygen2.
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+- pkgdown website:
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
