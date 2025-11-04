@@ -63,15 +63,92 @@
 
     
     
+<div class="section level2">
+<h2 id="vignettes">Vignettes<a class="anchor" aria-label="anchor" href="#vignettes"></a>
+</h2>
+<p>Vignettes show <strong>how to use a package in practice</strong>, not
+just how each function works.<br>
+The <code>yarrawater</code> vignettes give short, example-based guides
+to explore water-quality data and the interactive app.</p>
+<hr>
+<div class="section level3">
+<h3 id="about-the-package">About the package<a class="anchor" aria-label="anchor" href="#about-the-package"></a>
+</h3>
+<p><code>yarrawater</code> provides a cleaned version of Yarra River
+water-quality data,<br>
+together with an interactive Shiny app for quick visual exploration.</p>
+<p>You can load the data directly:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">yarrawater</span><span class="op">)</span></span></code></pre></div>
-  </main>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">yarrawater</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"yarra_wq_clean"</span>, package <span class="op">=</span> <span class="st">"yarrawater"</span><span class="op">)</span></span></code></pre></div>
+<p>view it:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://pillar.r-lib.org/reference/glimpse.html" class="external-link">glimpse</a></span><span class="op">(</span><span class="va">yarra_wq_clean</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Rows: 888</span></span>
+<span><span class="co">#&gt; Columns: 14</span></span>
+<span><span class="co">#&gt; $ `Site ID`             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 229143<span style="color: #949494;">, </span>229143<span style="color: #949494;">, </span>229143<span style="color: #949494;">, </span>229143<span style="color: #949494;">, </span>229143<span style="color: #949494;">, </span>229143<span style="color: #949494;">, </span>…</span></span>
+<span><span class="co">#&gt; $ Name                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "YARRA @ CHANDLER HWY"<span style="color: #949494;">, </span>"YARRA @ CHANDLER HWY"<span style="color: #949494;">, </span>…</span></span>
+<span><span class="co">#&gt; $ Datetime              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span> 1991-01-08 13:50:00<span style="color: #949494;">, </span>1991-02-12 09:35:00<span style="color: #949494;">, </span>1991-…</span></span>
+<span><span class="co">#&gt; $ `Data Type`           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Quality"<span style="color: #949494;">, </span>"Quality"<span style="color: #949494;">, </span>"Quality"<span style="color: #949494;">, </span>"Quality"<span style="color: #949494;">, </span>"Qua…</span></span>
+<span><span class="co">#&gt; $ `Parameter ID`        <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210<span style="color: #949494;">, </span>210…</span></span>
+<span><span class="co">#&gt; $ Parameter             <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>…</span></span>
+<span><span class="co">#&gt; $ Value                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 7.1<span style="color: #949494;">, </span>7.0<span style="color: #949494;">, </span>6.2<span style="color: #949494;">, </span>6.7<span style="color: #949494;">, </span>7.7<span style="color: #949494;">, </span>6.9<span style="color: #949494;">, </span>6.1<span style="color: #949494;">, </span>6.7<span style="color: #949494;">, </span>7.7<span style="color: #949494;">, </span>7.4…</span></span>
+<span><span class="co">#&gt; $ `Unit of Measurement` <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>"pH"<span style="color: #949494;">, </span>…</span></span>
+<span><span class="co">#&gt; $ Quality               <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> 65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>65<span style="color: #949494;">, </span>…</span></span>
+<span><span class="co">#&gt; $ Resolution            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> "Raw Data"<span style="color: #949494;">, </span>"Raw Data"<span style="color: #949494;">, </span>"Raw Data"<span style="color: #949494;">, </span>"Raw Data"<span style="color: #949494;">, </span>…</span></span>
+<span><span class="co">#&gt; $ Date                  <span style="color: #949494; font-style: italic;">&lt;date&gt;</span> 1991-01-08<span style="color: #949494;">, </span>1991-02-12<span style="color: #949494;">, </span>1991-03-12<span style="color: #949494;">, </span>1991-04-09<span style="color: #949494;">,</span>…</span></span>
+<span><span class="co">#&gt; $ Month                 <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> January<span style="color: #949494;">, </span>February<span style="color: #949494;">, </span>March<span style="color: #949494;">, </span>April<span style="color: #949494;">, </span>May<span style="color: #949494;">, </span>June<span style="color: #949494;">, </span>July…</span></span>
+<span><span class="co">#&gt; $ Weekday               <span style="color: #949494; font-style: italic;">&lt;ord&gt;</span> Tuesday<span style="color: #949494;">, </span>Tuesday<span style="color: #949494;">, </span>Tuesday<span style="color: #949494;">, </span>Tuesday<span style="color: #949494;">, </span>Tuesday<span style="color: #949494;">, </span>Tue…</span></span>
+<span><span class="co">#&gt; $ Hour                  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> 13<span style="color: #949494;">, </span>9<span style="color: #949494;">, </span>14<span style="color: #949494;">, </span>11<span style="color: #949494;">, </span>11<span style="color: #949494;">, </span>10<span style="color: #949494;">, </span>12<span style="color: #949494;">, </span>12<span style="color: #949494;">, </span>11<span style="color: #949494;">, </span>13<span style="color: #949494;">, </span>12<span style="color: #949494;">, </span>10<span style="color: #949494;">, </span>1…</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="basic-analysis">Basic analysis<a class="anchor" aria-label="anchor" href="#basic-analysis"></a>
+</h3>
+<p>Learn how to:</p>
+<p>summarise and visualise water-quality indicators such as pH or
+turbidity,compare values between decades or sites,and interpret boxplots
+to understand long-term changes.</p>
+</div>
+<div class="section level3">
+<h3 id="interactive-app">Interactive app<a class="anchor" aria-label="anchor" href="#interactive-app"></a>
+</h3>
+<p>You can also explore the dataset interactively with:</p>
+<p>yarrawater::run_my_app()</p>
+<p>The app lets you:</p>
+<ul>
+<li><p>select parameters</p></li>
+<li><p>read explanations about what the outputs mean.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="further-reading">Further reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
+</h3>
+<ul>
+<li><p>Data cleaning and structure — How the raw data is processed (see
+data-raw/yarra_wq_clean.R).</p></li>
+<li><p>Custom styling — Change colors and layout through
+www/style.css.</p></li>
+<li><p>Extending the package — Add your own data cleaning scripts or new
+datasets.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h3>
+<p><code>yarrawater</code> offers an end-to-end workflow:</p>
+<p>Clean data -&gt; Explore -&gt; Visualize -&gt; Interact</p>
+<p>Try loading the data, making a simple plot, and then using the app
+for deeper exploration.</p>
+</div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by First Last.</p>
+  <p>Developed by Nana Cheng.</p>
 </div>
 
 <div class="pkgdown-footer-right">

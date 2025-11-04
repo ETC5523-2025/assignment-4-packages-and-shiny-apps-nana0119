@@ -1,0 +1,59 @@
+
+
+body {
+  background: linear-gradient(to bottom right, #f0f9ff, #e0f7fa);
+  font-family: "Nunito", "Helvetica Neue", sans-serif;
+  color: #333;
+  padding: 20px;
+}
+
+
+h2, h3 {
+  color: #005f73;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+
+.well {
+  background-color: #ffffff;
+  border: 1px solid #b2dfdb;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+}
+
+
+
+#boxplot {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+
+p {
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  color: #444;
+}
+
+
+.help-block {
+  font-style: italic;
+  color: #006064;
+}
+
+.boxplot-title {
+  color: #00796b;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+

@@ -3,6 +3,9 @@
 
 # yarrawater
 
+The yarrawater package helps users explore changes in Yarra River water
+quality between the 1990s and 2020s.
+
 ### Purpose of the package
 
 The **yarrawater** package helps users explore changes in **Yarra River
@@ -40,7 +43,7 @@ package:
 remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119")
 #> Downloading GitHub repo ETC5523-2025/assignment-4-packages-and-shiny-apps-nana0119@HEAD
 #> ── R CMD build ─────────────────────────────────────────────────────────────────
-#>      checking for file ‘/private/var/folders/t4/8f2397n15vl_xd57bnz00cmw0000gn/T/RtmpDMxAKb/remotesf5e712dc180b/ETC5523-2025-assignment-4-packages-and-shiny-apps-nana0119-0f90f15/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/t4/8f2397n15vl_xd57bnz00cmw0000gn/T/RtmpDMxAKb/remotesf5e712dc180b/ETC5523-2025-assignment-4-packages-and-shiny-apps-nana0119-0f90f15/DESCRIPTION’
+#>      checking for file ‘/private/var/folders/t4/8f2397n15vl_xd57bnz00cmw0000gn/T/RtmpUIJu56/remotesf7a62cd48aa2/ETC5523-2025-assignment-4-packages-and-shiny-apps-nana0119-2948875/DESCRIPTION’ ...  ✔  checking for file ‘/private/var/folders/t4/8f2397n15vl_xd57bnz00cmw0000gn/T/RtmpUIJu56/remotesf7a62cd48aa2/ETC5523-2025-assignment-4-packages-and-shiny-apps-nana0119-2948875/DESCRIPTION’
 #>   ─  preparing ‘yarrawater’:
 #>      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 #>   ─  checking for LF line-endings in source and make files and shell scripts

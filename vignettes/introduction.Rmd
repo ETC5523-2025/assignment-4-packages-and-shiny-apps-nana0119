@@ -15,6 +15,62 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+
+# Vignettes
+
+Vignettes show **how to use a package in practice**, not just how each function works.  
+The `yarrawater` vignettes give short, example-based guides to explore water-quality data and the interactive app.
+
+---
+
+## About the package
+
+`yarrawater` provides a cleaned version of Yarra River water-quality data,  
+together with an interactive Shiny app for quick visual exploration.  
+
+You can load the data directly:
+
+```{r}
 library(yarrawater)
+data("yarra_wq_clean", package = "yarrawater")
 ```
+view it:
+```{r}
+dplyr::glimpse(yarra_wq_clean)
+```
+
+## Basic analysis
+
+Learn how to:
+
+summarise and visualise water-quality indicators such as pH or turbidity,compare values between decades or sites,and interpret boxplots to understand long-term changes.
+
+
+
+
+## Interactive app
+You can also explore the dataset interactively with:
+
+yarrawater::run_my_app()
+
+The app lets you:
+
+- select parameters
+
+- read explanations about what the outputs mean.
+
+## Further reading
+
+- Data cleaning and structure — How the raw data is processed (see data-raw/yarra_wq_clean.R).
+
+- Custom styling — Change colors and layout through www/style.css.
+
+- Extending the package — Add your own data cleaning scripts or new datasets.
+
+## Summary
+
+`yarrawater` offers an end-to-end workflow:
+
+Clean data -> Explore -> Visualize -> Interact
+
+Try loading the data, making a simple plot, and then using the app for deeper exploration.

@@ -15,6 +15,9 @@ knitr::opts_chunk$set(
 
 # yarrawater
 
+The yarrawater package helps users explore changes in Yarra River water quality between the 1990s and 2020s.
+
+
 ### Purpose of the package
 The **yarrawater** package helps users explore changes in **Yarra River water quality** between the **1990s** and **2020s**.  
 It provides a cleaned dataset, useful plotting functions, and an interactive **Shiny app** for comparing water quality indicators such as **pH**, **Salinity as EC@25**, **Turbidity**, and **Water Temperature**.
